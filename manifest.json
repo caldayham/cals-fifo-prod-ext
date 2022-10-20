@@ -1,17 +1,36 @@
 {
+    "manifest_version": 2,
     "name": "cals-firefox-productivity-extension",
     "version": "1.0",
 
     "description": "adds simple keyboard shortcuts and obvious re-mappings to firefox and possibly other productivity features in the future.",
 
     "icons": {
-        "prod-ext": "icons/fifo-prod-ext"
+        "48": "icons/favicon.ico"
+    },
+
+    "permissions": ["tabs", "contextMenus", "clipboardWrite"],
+
+    "background": {
+        "scripts": ["background_script.js"]
+    },
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "cals-fifo-prod-ext"
+        }
     },
 
     "content_scripts": [
         {
-            "matches": ["*://*.printsci.com"],
+            "matches": ["*://*.twitch.tv/mbcrump"],
             "js": ["app.js"]
         }
-    ]
+    ],
+
+    "browser_action": {
+        "default_action": {
+            "64": "icons/favicon.ico"
+        }
+    }
 }
